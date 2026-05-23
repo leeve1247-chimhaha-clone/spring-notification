@@ -1,0 +1,10 @@
+package com.multirkh.chimhahanotification.notification;
+
+import java.util.List;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface NotificationRepository extends JpaRepository<Notification, Long> {
+
+    List<Notification> findByUserIdOrderByCreatedAtDesc(String userId, Pageable pageable);
+}
